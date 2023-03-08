@@ -41,8 +41,8 @@ export function observe(draggedEl, dropZones, intervalMs = INTERVAL_MS) {
         if (
             !scrolled &&
             lastCentrePositionOfDragged &&
-            Math.abs(lastCentrePositionOfDragged.x - currentCenterOfDragged.x) < (draggedEl.offsetHeight * 1,5) &&
-            Math.abs(lastCentrePositionOfDragged.y - currentCenterOfDragged.y) < (draggedEl.offsetHeight * 1,5)
+            Math.abs(lastCentrePositionOfDragged.x - currentCenterOfDragged.x) < (draggedEl.offsetHeight * 1.5) &&
+            Math.abs(lastCentrePositionOfDragged.y - currentCenterOfDragged.y) < (draggedEl.offsetHeight * 1.5)
         ) {
             next = window.setTimeout(andNow, intervalMs);
             return;
