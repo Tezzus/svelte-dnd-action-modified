@@ -12,7 +12,7 @@ import {getDepth} from "./util";
 import {printDebug} from "../constants";
 
 const INTERVAL_MS = 200;
-/* const TOLERANCE_PX = 10; */
+const TOLERANCE_PX = 10; 
 const {scrollIfNeeded, resetScrolling} = makeScroller();
 let next;
 
@@ -41,8 +41,8 @@ export function observe(draggedEl, dropZones, intervalMs = INTERVAL_MS) {
         if (
             !scrolled &&
             lastCentrePositionOfDragged &&
-            Math.abs(lastCentrePositionOfDragged.x - currentCenterOfDragged.x) < (draggedEl.offsetHeight * 1.1) &&
-            Math.abs(lastCentrePositionOfDragged.y - currentCenterOfDragged.y) < (draggedEl.offsetHeight * 1.1)
+            Math.abs(lastCentrePositionOfDragged.x - currentCenterOfDragged.x) < (TOLERANCE_PX) &&
+            Math.abs(lastCentrePositionOfDragged.y - currentCenterOfDragged.y) < (draggedEl.offsetHeight * 1.2)
         ) {
             next = window.setTimeout(andNow, intervalMs);
             return;
